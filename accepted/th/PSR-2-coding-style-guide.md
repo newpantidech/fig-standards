@@ -7,7 +7,7 @@ Coding Style Guide
 โดยเราจะแบ่งปันไฟล์ กฎ หรือ รูปแบบ ที่เราคาดหวังว่าจะให้ Code PHP ที่เราพัฒนาไปในรูปแบบเป็นแบบไหนให้กับผู้อื่น
 
 รูปแบบและกฎที่เราได้มานั้น มาจากการตกลงร่วมกันระหว่างสมาชิกในโครงการนั้นๆ
-ซึ่งเมื่อทีม มีประสบการณ์ในการทำงานร่วมกันหลายๆ โครงการมันจะทำให้เราได้ชุดรูปแบบ 1 ชุด เพื่อนำไปใช้ในโครงการที่เหลือ 
+ซึ่งเมื่อทีม มีประสบการณ์ในการทำงานร่วมกันหลายๆ โครงการมันจะทำให้เราได้ชุดรูปแบบ 1 ชุด เพื่อนำไปใช้ในโครงการที่เหลือ
 
 ดังนั้น ประโยชน์ของคู่มือนี้ มันไม่ได้อยู่ที่ตัวกฎของตัวมันเอง แต่มันอยู่ที่การตกลงร่วมกันในการจะใช้กฎหรือรูปแบบ ร่วมกันของทีมว่าเราจะใช้แบบใหน
 
@@ -36,7 +36,7 @@ interpreted as described in [RFC 2119].
 - การเปิด ปีกกา "{" ของ methods จะต้องเปิดในบรรทัดใหม่ และการ ปิดปีกกา "}" ของ methods ต้องปิดในบรรทัดใหม่เช่นกัน
 
 - การใช้คำสั่ง abstract และ final จะต้องอยู่ด้านหน้า public เสมอ และถ้าจะใช้ static จะต้องไว้ด้านหลัง public เสมอ
-  
+
 - โครงสร้างคำสั่งสงวน จะต้องมี วรรค 1 วรรคหลังตัวมันเสมอเสมอ แต่ method และ functionที่เรียกใช้ ไม่ต้องมี
 
 - การเปิด ปีกกา { ของโครงสร้างคำสั่ง จะต้องเปิดอยู่ในบรรทัดเดียวกับที่เริ่ม ส่วนกสนปิดปีกกา } จะต้องปิดในบรรทัดต่อไป โดยอยู่ในตำแหน่งด้านหน้า
@@ -108,8 +108,8 @@ class Foo extends Bar implements FooInterface
 
 ย่อหน้าของโปรแกรมต้องจะเคาะวรรค 4 ครั้ง และไม่ควรใช้ tab ในการย่อหน้า
 
-> หมายเหตุ ใช้เฉพาะเคาะวรรคและไม่ควรผสมเคาะวรรคกับ tab เพื่อช่วยให้หลีกเลี่ยงปัญหาที่เกิดจาก diffs, patches, history, and annotation 
-> การใช้เคาะวรรคง่ายต่อการแทรกต่อการแทรก ย่อหน้ารอง (sub-indentation) 
+> หมายเหตุ ใช้เฉพาะเคาะวรรคและไม่ควรผสมเคาะวรรคกับ tab เพื่อช่วยให้หลีกเลี่ยงปัญหาที่เกิดจาก diffs, patches, history, and annotation
+> การใช้เคาะวรรคง่ายต่อการแทรกต่อการแทรก ย่อหน้ารอง (sub-indentation)
 > แบบละเอียด(fine-grained) สำหรับการจัดแนวระหว่างบรรทัด (inter-line)
 
 ### 2.5. ข้อกำหนดเกี่ยวกับคำ Keyword และ True/ False / Null
@@ -119,19 +119,16 @@ class Foo extends Bar implements FooInterface
 ค่าคงที่ของ PHP ได้แก่ true, false และ null ควรใช้ตัวอักษรพิมพ์เล็ก
 
 
-3. Namespace and Use Declarations
+3. Namespace และ การประกาศใช้
 ---------------------------------
 
-When present, there MUST be one blank line after the `namespace` declaration.
+เมื่อประกาศ `namespace` แล้วต้องเว้นว่างไว้ 1 บรรทัด
 
-When present, all `use` declarations MUST go after the `namespace`
-declaration.
+การประกาศคำสั่ง `use` ต้องอยู่หลังจากการประกาศ namespace
 
-There MUST be one `use` keyword per declaration.
+จากนั้นก็เว้นว่าง 1 บรรทัดแล้วบล็อกปิดคำสั่ง
 
-There MUST be one blank line after the `use` block.
-
-For example:
+ตัวอย่างเช่น
 
 ```php
 <?php
@@ -144,7 +141,6 @@ use OtherVendor\OtherPackage\BazClass;
 // ... additional PHP code ...
 
 ```
-
 
 4. Classes, Properties, and Methods
 -----------------------------------
@@ -197,7 +193,7 @@ class ClassName extends ParentClass implements
 คำสำคัญ `var` ต้องไม่ถูกใช้ในการสร้างตัวแปร
 
 ต้องไม่มีการประกาศตัวแปรมากกว่าหนึ่งตัวแปรในหนึ่งคำสั่ง
-ชื่อตัวแปรจะต้องไม่มีคำนำหน้าตามด้วยขีดล่างเพื่อบอกค่าการมองเห็น 
+ชื่อตัวแปรจะต้องไม่มีคำนำหน้าตามด้วยขีดล่างเพื่อบอกค่าการมองเห็น
 
 การประกาศตัวแปรมีลักษณะดังตัวอย่าง
 
@@ -211,20 +207,15 @@ class ClassName
 }
 ```
 
-### 4.3. Methods
+### 4.3 เมธอด
 
-Visibility MUST be declared on all methods.
+Visibility จะต้องประกาศใน เมธอดทั้งหมด
 
-Method names SHOULD NOT be prefixed with a single underscore to indicate
-protected or private visibility.
+ชื่อเมธอดไม่ต้องนำหน้าด้วยขีดล่าง เพื่อใช้บอกถึงการป้องกันหรือมองเห็นเป็นส่วนตัว
 
-Method names MUST NOT be declared with a space after the method name. The
-opening brace MUST go on its own line, and the closing brace MUST go on the
-next line following the body. There MUST NOT be a space after the opening
-parenthesis, and there MUST NOT be a space before the closing parenthesis.
+ชื่อเมธอดไม่ต้องประกาศด้วยวรรคหลังชื่อเมธอด การเปิดวงเล็บปีกกาต้องอยู่บนบรรทัดของตัวเองและปีกกาปิดต้องอยู่บนบรรทัดถัดไปต่อไปนี้ตามเนื้อหา ไม่ต้องมีวรรคหลังวงเล็บเปิดและไม่ต้องมีวรรคหลังวงเล็บปิด
 
-A method declaration looks like the following. Note the placement of
-parentheses, commas, spaces, and braces:
+การประกาศเมธอดจะต้องดูสิ่งต่อไปนี้ หมายเหตุ : ตำแหน่งของวงเล็บ  คอมมา  วรรค  และวงเล็บปีกกา
 
 ```php
 <?php
@@ -237,15 +228,12 @@ class ClassName
         // method body
     }
 }
-```    
+```  
 
-### 4.4. Method Arguments
+### 4.4 เมธอดตัวแปรรับค่า
 
-In the argument list, there MUST NOT be a space before each comma, and there
-MUST be one space after each comma.
-
-Method arguments with default values MUST go at the end of the argument
-list.
+ในรายการอาร์กิวเมนต์ไม่ต้องมีวรรคก่อนแต่ละคอมมา และจะต้องมี 1 วรรคหลังแต่ละคอมม่า
+ตัวแปรรับค่าที่มีค่าเริ่มต้นจะต้องไปที่รายกาสุดท้ายของอาร์กิวเมนต์
 
 ```php
 <?php
@@ -260,13 +248,9 @@ class ClassName
 }
 ```
 
-Argument lists MAY be split across multiple lines, where each subsequent line
-is indented once. When doing so, the first item in the list MUST be on the
-next line, and there MUST be only one argument per line.
+รายการอาร์กิวเมนต์อาจจะแยกออกหลายๆ บรรทัด ซึ่งแต่ละบรรทัดจะย่อหน้าเพียงครั้งเดียว  เมื่อทำเช่นนั้น ชิ้นแรกในรายการจะต้องอยู่ในบรรทัดถัดไปและจะต้องมีเพียง 1 อาร์กิวเมนต์ต่อบรรทัด
 
-When the argument list is split across multiple lines, the closing parenthesis
-and opening brace MUST be placed together on their own line with one space
-between them.
+เมื่อรายการอาร์กิวเมนต์ที่ถูกแยกออกหลายๆ บรรทัด วงเล็บเปิดและวงเล็บปีกกาเปิดจะต้องอยู่รวมกันในบรรทัดของตัวเอง กับ 1 วรรคระหว่างพวกเขา
 
 ```php
 <?php
@@ -284,13 +268,10 @@ class ClassName
 }
 ```
 
-### 4.5. `abstract`, `final`, and `static`
+### 4.5 `abstract`, `final`, and `static`
 
-When present, the `abstract` and `final` declarations MUST precede the
-visibility declaration.
-
-When present, the `static` declaration MUST come after the visibility
-declaration.
+เมื่อเป็นปัจจุบัน การประกาศ `abstract` และ `final` จะต้องประกาศ visibility ก่อน
+เมื่อเป็นปัจจุบัน  การประกาศ `static`  จะต้องมาหลังจากการประกาศ  visibility
 
 ```php
 <?php
@@ -309,13 +290,9 @@ abstract class ClassName
 }
 ```
 
-### 4.6. Method and Function Calls
+### 4.6 เมธอดและฟังก์ชั่น Calls
 
-When making a method or function call, there MUST NOT be a space between the
-method or function name and the opening parenthesis, there MUST NOT be a space
-after the opening parenthesis, and there MUST NOT be a space before the
-closing parenthesis. In the argument list, there MUST NOT be a space before
-each comma, and there MUST be one space after each comma.
+เมื่อมีการทำเมธอดหรือฟังก์ชั่น Calls  ต้องไม่มีวรรคระหว่างเมธอดหรือชื่อฟังก์ชั่น และวงเล็บเปิด  ไม่ต้องมีวรรคหลังวงเล็บเปิดและต้องไม่มีวรรคก่อนวงเล็บปิด  ในรายการอาร์กิวเมนต์ไม่ต้องมีวรรคก่อนแต่ละคอมม่าและต้องมี  1  วรรค  หลังแต่ละคอมม่า
 
 ```php
 <?php
@@ -324,9 +301,7 @@ $foo->bar($arg1);
 Foo::bar($arg2, $arg3);
 ```
 
-Argument lists MAY be split across multiple lines, where each subsequent line
-is indented once. When doing so, the first item in the list MUST be on the
-next line, and there MUST be only one argument per line.
+รายการอาร์กิวเมนต์อาจจะแยกออกหลายๆ บรรทัด ซึ่งแต่ละบรรทัดจะย่อหน้าเพียงครั้งเดียว  เมื่อทำเช่นนั้น ชิ้นแรกในรายการจะต้องอยู่ในบรรทัดถัดไปและจะต้องมีเพียง 1 อาร์กิวเมนต์ต่อบรรทัด
 
 ```php
 <?php
@@ -337,31 +312,25 @@ $foo->bar(
 );
 ```
 
-5. Control Structures
+5.โครงสร้างการควบคุม
 ---------------------
 
-The general style rules for control structures are as follows:
+กฏของรูปแบบทั่วไปของโครงสร้างการควบคุม มีดังนี้
 
-- There MUST be one space after the control structure keyword
-- There MUST NOT be a space after the opening parenthesis
-- There MUST NOT be a space before the closing parenthesis
-- There MUST be one space between the closing parenthesis and the opening
-  brace
-- The structure body MUST be indented once
-- The closing brace MUST be on the next line after the body
+-	จะต้องมีช่องว่าง 1 ช่อง หลังคำสำคัญ
+-	จะต้องไม่มีช่องว่างหลังเครื่องหมายวงเล็บเปิด
+-	จะต้องไม่มีพื้นที่ก่อนเครื่องหมายวงเล็บปิด
+-	จะต้องมีช่องว่าง 1 ช่องระหว่างเครื่องหมายวงเล็บปิด และวงเล็บเปิด
+-	ส่วนของโครงสร้างจะต้องย่อหน้า 1 ย่อหน้า
+-	เครื่องหมายวงเล็บปิดจะต้องมีในบรรทัดถัดไปหลังเนื้อหา
 
-The body of each structure MUST be enclosed by braces. This standardizes how
-the structures look, and reduces the likelihood of introducing errors as new
-lines get added to the body.
-
+แต่ละส่วนของโครงสร้างจะต้องปิดด้วยเครื่องหมายปีกกา มาตรฐานของนี้ โครงสร้างจะมองหาและช่วยลดโอกาส ด้วยการแนะนำข้อผิดพลาดถูกเพิ่มไว้บรรทัดใหม่ของเนื้อหา
 
 ### 5.1. `if`, `elseif`, `else`
 
-An `if` structure looks like the following. Note the placement of parentheses,
-spaces, and braces; and that `else` and `elseif` are on the same line as the
-closing brace from the earlier body.
+ถ้าโครงสร้างมีลักษณะดังต่อไปนี้ โปรดสังเกตุคำแหน่งของเครื่องหมายวงเล็บ วรรค และวงเล็บ
 
-```php
+``` PHP
 <?php
 if ($expr1) {
     // if body
@@ -371,20 +340,13 @@ if ($expr1) {
     // else body;
 }
 ```
-
-The keyword `elseif` SHOULD be used instead of `else if` so that all control
-keywords look like single words.
-
+คำสำคัญ `else if` ควรนำมาใช้แทน `else if` เพื่อให้การควบคุมคำสำคัญมีลักษณะเหมือนคำเดียว
 
 ### 5.2. `switch`, `case`
 
-A `switch` structure looks like the following. Note the placement of
-parentheses, spaces, and braces. The `case` statement MUST be indented once
-from `switch`, and the `break` keyword (or other terminating keyword) MUST be
-indented at the same level as the `case` body. There MUST be a comment such as
-`// no break` when fall-through is intentional in a non-empty `case` body.
+`switch` มีโครงสร้างลักษณะเหมือนต่อไปนี้ หมายเหตุ การจัดตำแหน่งของเครื่องหมายวงเล็บ, วรรค, วงเล็บ case statement จะต้องเว้นวรรค 1 วรรค ก่อน `switch` และ `break` (หรือยกเลิกคำสั่งอื่นๆ) ต้องวรรคในระดับเดียวกันของ `case` body ต้องมีความคิดเห็น เช่น // no break เมื่อเจตนาผ่าน ให้ `case` ไม่ว่างเปล่า
 
-```php
+``` PHP
 <?php
 switch ($expr) {
     case 0:
@@ -404,23 +366,18 @@ switch ($expr) {
 }
 ```
 
-
 ### 5.3. `while`, `do while`
 
-A `while` statement looks like the following. Note the placement of
-parentheses, spaces, and braces.
+คำสั่ง `while` มีลักษณะเหมือนต่อไปนี้ หมายเหตุ การจัดตำแหน่งของเครื่องหมายวงเล็บ, วรรค, วงเล็บ
 
-```php
+``` PHP
 <?php
 while ($expr) {
     // structure body
 }
 ```
-
-Similarly, a `do while` statement looks like the following. Note the placement
-of parentheses, spaces, and braces.
-
-```php
+ทำนองเดียวกัน คำสั่ง `do while` มีลักษณะเหมือนต่อไปนี้ หมายเหตุ การจัดตำแหน่งของเครื่องหมายวงเล็บ, วรรค, วงเล็บ
+``` PHP
 <?php
 do {
     // structure body;
@@ -429,10 +386,9 @@ do {
 
 ### 5.4. `for`
 
-A `for` statement looks like the following. Note the placement of parentheses,
-spaces, and braces.
+คำสั่ง `for` มีลักษณะเหมือนต่อไปนี้ หมายเหตุ การจัดตำแหน่งของเครื่องหมายวงเล็บ, วรรค, วงเล็บ
 
-```php
+``` PHP
 <?php
 for ($i = 0; $i < 10; $i++) {
     // for body
@@ -440,11 +396,10 @@ for ($i = 0; $i < 10; $i++) {
 ```
 
 ### 5.5. `foreach`
-    
-A `foreach` statement looks like the following. Note the placement of
-parentheses, spaces, and braces.
 
-```php
+คำสั่ง `foreach` มีลักษณะเหมือนต่อไปนี้ หมายเหตุ การจัดตำแหน่งของเครื่องหมายวงเล็บ, วรรค, วงเล็บ
+
+``` PHP
 <?php
 foreach ($iterable as $key => $value) {
     // foreach body
@@ -453,10 +408,9 @@ foreach ($iterable as $key => $value) {
 
 ### 5.6. `try`, `catch`
 
-A `try catch` block looks like the following. Note the placement of
-parentheses, spaces, and braces.
+กลุ่ม `try` และ `catch` มีลักษณะเหมือนต่อไปนี้ หมายเหตุ การจัดตำแหน่งของเครื่องหมายวงเล็บ, วรรค, วงเล็บ
 
-```php
+``` PHP
 <?php
 try {
     // try body
@@ -653,7 +607,7 @@ determine common practices.  The survey is retained herein for posterity.
 control structures จะไม่ใช้วงเล็บ
 
 `else_elseif_line`:
-เมื่อมีการใช้ `else` หรือ `elseif` `same ` = วงเล็บปีกกาไม่อยู่บรรทัดเดียวกัน หรือ `next` = ไม่อยู่ในบรรทัดถัดไป 
+เมื่อมีการใช้ `else` หรือ `elseif` `same ` = วงเล็บปีกกาไม่อยู่บรรทัดเดียวกัน หรือ `next` = ไม่อยู่ในบรรทัดถัดไป
 
 `case_break_indent_from_switch`:
 `case` และ `break` อยู่เยื้องจากคำสั่ง `switch` เท่าไร
